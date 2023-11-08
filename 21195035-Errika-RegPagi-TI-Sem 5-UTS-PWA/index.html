@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CV ERRIKA MUTIARA</title>
+
+        <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header>
+            <div>
+                <img src="IMG/fotosaya.jpeg"
+                alt="Foto de perfil do GitHub de Larissa Ishikawa"
+                height="250px"
+                width="250px">    
+                <h1> Errika Mutiara Dewi</h1>
+                <p>Perbankan | Customer Service Representative </p>
+                <p>Tegal, Jawa Tengah, Indonesia</p> 
+            </div>
+        </header> <br>
+    
+        <main>
+
+            <section>
+                <div>
+                    <h2>Profile</h2>
+                    <p> NIM         : 21195035</p>
+                    <p> Kelas       : Reguler Pagi</p>
+                    <p> Mata Kuliah : 21195035</p>
+                    <p> Tujuan Belajar PWA : Untuk menambah pengetahuan mengenai pemrograman komputer </p>
+                </div>
+            </section> <br>
+
+            <section class="class-hardskills">
+                <div>
+                    <h2>Hard Skills </h2>
+                    <ul>
+                        <li>Microsoft Excel</li>
+                        <li>Microsoft Word</li>
+                    </ul>
+                </div>
+            </section> <br>
+
+            <section class="class-softskikks">
+                <div>
+                    <h2>Soft Skills</h2>
+                    <ul>
+                        <li>Sabar</li>
+                        <li>Ramah</li>
+                        <li>Teliti</li>
+                    </ul>
+                </div>
+            </section> <br>
+
+            <section>
+                <div>
+                    <h2>Pengalaman Kerja</h2>
+                    <p><b>Teller Bank - Bank BRI Kantor Pusat</b></p>
+                    <p>Juni 2025 - Januari 2026 </p>
+                    <p><b>Customer Service - Bank BCA Cabang Purwokerto</b></p>
+                    <p>Februari 2026 - Maret 2027</p>
+                </div>
+            </section> <br>
+
+            <section>
+                <div>
+                    <h2>Riwayat Pendidikan</h2>
+                    <p><b>Teknik Informatika</b></p>
+                    <p>STMIK ASIK - TEGAL <br>
+                        Januari 2021 – Desember 2024</p>
+                </div>
+            </section> <br>
+
+            <section>
+                <div>
+                    <h2>Hobi</h2>
+                    <ul>
+                        <li>Membaca</li>
+                        <li>Mendengarkan Musik</li>
+                        <li>Memasak</li>
+                    </ul>
+                </div>
+            </section> <br>
+
+            <section class="class-contact">
+                <div>
+                    <h2>Kontak</h2>
+                    <p>Hubungi saya melalui email atau telepon jika Anda memerlukan informasi tambahan atau ingin berbicara lebih lanjut tentang pengalaman dan kualifikasi saya.</p> <br>
+                    <ol class="contacts">
+                        <li>
+                                <img
+                                src="IMG/cellphone.png"
+                                alt="logo cellphone">
+                                <p><b>0812154225</b></p>
+                        </li>
+                        <li>
+                                <img
+                                src="IMG/gmail.png"
+                                alt="logo gmail">
+                                <p><b>erikamutiaradewi04@gmail.com</b></p>
+                        </li>
+                        <li>
+                            <img
+                            src="IMG/gambarig.png"
+                            alt="logo ig">
+                            <p><b>_eraraa</b></p>
+                        </li>
+                    </ol>
+                </div>
+            </section> <br>
+            <section>
+                <div>
+                    <h2>Komentar</h2>
+                    <ul>
+                        <form id="commentForm">
+                            <label for="nama">Nama:</label><br>
+                                <input type="text" id="nama" name="nama" required><br><br>
+                            <label for="email">Email:</label><br>
+                                <input type="text" id="email" name="email" required><br><br>
+                            <label for="komentar">Input Komentar :</label><br>
+                                <textarea id="komentar" name="komentar" rows="4" cols="50" required></textarea><br><br>
+                            <input id="submit" type="submit" value="Kirim Komentar">
+                            <input id="hapus" type="submit" value="Hapus Komentar">
+                        </form>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <p>Made with 💚 by Errikamutiara</a></p>
+            <br> <br>
+        </footer>
+<script src="/db.js">
+</script>
+        <script>
+            window.onload = () => {
+  'use strict';
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./sw.js');
+  }
+}
+        </script>
+<script>
+    // Minta izin notifikasi
+if ('Notification' in window) {
+  Notification.requestPermission()
+    .then(function (permission) {
+      if (permission === 'granted') {
+        showNotification('Selamat datang!', 'Terima kasih telah menggunakan PWA ini.'); 
+        alert('Terima kasih sudah datang');
+      }
+      else if (permission === 'denied') {
+        // Izin diblokir
+        alert('anda terblokir bro');
+    }
+
+    
+    });
+    
+}
+
+// Fungsi untuk menampilkan notifikasi
+function showNotification(title, message) {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    navigator.serviceWorker.ready.then(function (registration) {
+      registration.showNotification(title, {
+        body: message,
+        
+      });
+    });
+  }
+}</script>
+    </body>
+</html>
